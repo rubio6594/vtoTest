@@ -22,15 +22,12 @@ export class AppPageOutletComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
     handleScroll(){
-      console.log(this.menuPosition);
-
-        const windowScroll = window.pageYOffset;
-        console.log(windowScroll)
-        if(this.menuPosition && windowScroll >= this.menuPosition){
-            this.sticky = true;
-        } else {
-            this.sticky = false;
-        }
+      const windowScroll = window.pageYOffset;
+      if(this.menuPosition && windowScroll >= this.menuPosition){
+          this.sticky = true;
+      } else {
+          this.sticky = false;
+      }
     }
 
   constructor(private loginFacade: LoginFacade) { }
@@ -39,8 +36,9 @@ export class AppPageOutletComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log(this.menuElement)
-    this.menuPosition = this.menuElement?._elementRef.nativeElement.offsetTop;
+    setTimeout(() => {
+      this.menuPosition = this.menuElement?._elementRef.nativeElement.offsetTop;
+   }, 0)
   }
 
   doLogout() {
