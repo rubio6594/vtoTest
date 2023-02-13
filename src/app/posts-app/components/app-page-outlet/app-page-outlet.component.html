@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar #stickyMenu [class.sticky] = "sticky" color="primary">
     <mat-toolbar-row>
         <button class="mobile-nav" mat-icon-button>
             <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
@@ -6,11 +6,12 @@
         </button>
         <app-menu-bar class="desktop-nav content"></app-menu-bar>
         <span class="spacer"></span>
-        <a mat-button (click)="doLogout()"> Logout </a>
+        <a mat-button (click)="doLogout()"> 
+            <mat-icon>person</mat-icon>Logout </a>
     </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-sidenav-container>
+<mat-sidenav-container [class.sticky-menu-content] = "sticky">
     <mat-sidenav #sidenav class="mobile-nav">
         <app-sidenav [sidenav]="sidenav"></app-sidenav>
     </mat-sidenav>

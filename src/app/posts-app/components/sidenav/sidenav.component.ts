@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { menuPages } from '../../definitions/menu-pages';
+import { navPages } from '../../pages/nav-pages';
 
 @Component({
   selector: 'app-sidenav',
@@ -12,7 +12,7 @@ export class SidenavComponent implements OnInit {
   @Input()
   sidenav: MatSidenav | undefined;
   
-  menuPages = menuPages;
+  navPages = navPages;
   
   constructor() { }
 

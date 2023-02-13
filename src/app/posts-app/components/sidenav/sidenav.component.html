@@ -1,5 +1,5 @@
 <mat-nav-list class="sidenav">
-    <a mat-list-item *ngFor="let page of menuPages" [routerLink]="page.route" (click)="sidenav?.toggle()"> 
+    <a mat-list-item *ngFor="let page of navPages" [routerLink]="page.route" (click)="sidenav?.toggle()"> 
         <mat-icon>{{page.icon}}</mat-icon>
         {{page.name}} 
     </a>

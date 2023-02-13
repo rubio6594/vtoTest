@@ -1,4 +1,4 @@
-export const menuPages: page[] = [
+export const navPages: page[] = [
     {
         icon: 'home',
         name: 'Home',
@@ -7,12 +7,12 @@ export const menuPages: page[] = [
     {
         icon: 'phone',
         name: 'Phone',
-        route: ""
+        route: 'phone'
     },
     {
         icon: 'info',
         name: 'Info',
-        route: ''
+        route: 'info'
     }
 ]
 

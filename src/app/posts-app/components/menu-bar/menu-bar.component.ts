@@ -1,4 +1,4 @@
-import { menuPages } from './../../definitions/menu-pages';
+import { navPages } from '../../pages/nav-pages';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuBarComponent implements OnInit {
   
-  menuPages = menuPages;
+  navPages = navPages;
 
   constructor() { }
 
