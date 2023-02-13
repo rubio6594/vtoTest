@@ -1,0 +1,49 @@
+<mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
+</mat-form-field>
+
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 home-table">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Id
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Title
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="body">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Body
+    </th>
+    <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="matchTitle">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Title Matchs
+    </th>
+    <td mat-cell class="match-number" *matCellDef="let element"> {{(matchs.get(element.id) || [0,0])[0]}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="matchBody">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>
+      Body Matchs
+    </th>
+    <td mat-cell class="match-number" *matCellDef="let element"> {{(matchs.get(element.id) || [0,0])[1]}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator class="home-table-paginator" [pageSizeOptions]="[20, 25, 30]" showFirstLastButtons>
+</mat-paginator>

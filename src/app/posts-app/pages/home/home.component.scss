@@ -1,0 +1,19 @@
+.twitter-container {
+    padding: 0px 20px;
+    position: relative;
+    overflow: auto;
+    margin-bottom: 20px;
+    min-height: 500px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.twitter-content {
+    position: absolute;
+    width: 90%;
+}
+
+mat-card {
+    margin-bottom: 15px;
+}

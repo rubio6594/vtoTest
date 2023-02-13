@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button class="mobile-nav" mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+            <h1>VTO Test</h1>
+        </button>
+        <app-menu-bar class="desktop-nav content"></app-menu-bar>
+        <span class="spacer"></span>
+        <a mat-button (click)="doLogout()"> Logout </a>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav class="mobile-nav">
+        <app-sidenav [sidenav]="sidenav"></app-sidenav>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

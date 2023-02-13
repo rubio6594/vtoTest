@@ -1,0 +1,18 @@
+<mat-card class="login-page">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+
+    <div *ngIf="!loading" class="login-form">
+        <form [formGroup]="loginForm">
+            <mat-form-field>
+                <label for="first-name">User: </label>
+                <input matInput id="user" type="text" formControlName="user">
+            </mat-form-field>
+            <mat-form-field>
+                <label for="last-name">Password: </label>
+                <input matInput id="pass" type="password" formControlName="pass">
+            </mat-form-field>
+          
+          </form>
+        <button mat-button class="login-button" (click)="doLogin()">Login</button>
+    </div>
+</mat-card>

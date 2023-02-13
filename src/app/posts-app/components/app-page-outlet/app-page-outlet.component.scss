@@ -1,0 +1,30 @@
+.spacer {
+    flex: 1 1 auto;
+}
+
+.content {
+    padding: 0px 50px;
+    margin: 20px 0px;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.mat-icon-button::ng-deep {
+    outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-nav {
+        display: block;
+    }
+
+    .desktop-nav {
+        display: none;
+    }
+
+    .content {
+        padding: 20px 10px;
+    }
+}
